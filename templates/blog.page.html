@@ -1,0 +1,19 @@
+{{ define "content" }}
+<h2 class="title-highlight">Blog</h2>
+<p class="text-glow">
+    Últimos artigos...
+</p>
+<div class="row">
+    {{ range $_, $post := . }}
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm p-3">
+            <div>
+                <h5>{{ $post.Title }}</h5>
+                <p>{{ $post.Excerpt }}</p>
+                <a href="post/{{ $post.Slug }}" class="btn btn-primary">Leia mais</a>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ end }}
